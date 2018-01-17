@@ -1,0 +1,18 @@
+* packages
+#+BEGIN_SRC 
+sudo apt install ipython3
+sudo apt install ipython3-notebook
+sudo apt install python3-pandas
+#+END_SRC
+
+* ipython notebook
+** Installation
+#+BEGIN_SRC
+ipython3 notebook --pylab inline
+#+END_SRC
+
+** Running
+See: http://nbviewer.jupyter.org/github/jvns/pandas-cookbook/blob/v0.1/cookbook/A%20quick%20tour%20of%20IPython%20Notebook.ipynb
+
+* pandas
+See Tutorials: https://pandas.pydata.org/pandas-docs/stable/tutorials.html
