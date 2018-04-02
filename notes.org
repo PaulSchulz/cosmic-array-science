@@ -1,4 +1,29 @@
-* packages
+* data sets
+| filename                  |             start | date                          |               end | date                          |
+|---------------------------+-------------------+-------------------------------+-------------------+-------------------------------|
+| cosmic-array.log.20180116 | 1515142282.402535 | Fri  5 Jan 19:21:22 ACDT 2018 | 1516084500.385583 | Tue 16 Jan 17:05:00 ACDT 2018 |
+| cosmic-array.log.20180217 | 1516084564.897229 | Tue 16 Jan 17:06:04 ACDT 2018 | 1518870464.984408 | Sat 17 Feb 22:57:44 ACDT 2018 |
+| cosmic-array.log.20180402 | 1518870757.834977 | Sat 17 Feb 23:02:37 ACDT 2018 | 1522673001.725486 | Mon  2 Apr 22:13:21 ACST 2018 |
+|---------------------------+-------------------+-------------------------------+-------------------+-------------------------------|
+| cosmic-array.log.combined | 1515142282.402535 | Fri  5 Jan 19:21:22 ACDT 2018 | 1522673001.725486 | Mon  2 Apr 22:13:21 ACST 2018 |
+
+  CAHOST=10.147.20.58
+
+Rotate data
+  DATESTAMP=`date +"%Y%m%d"`
+  ssh pi@$CAHOST mv git/cosmic-array/cosmic-array.log git/cosmic-array.log.$DATESTAMP
+  ssh pi@$CAHOST reboot
+
+Get files:
+  scp pi@$CAHOST:git/cosmic-array/cosmic-array.log.* .
+
+To get time from unix timestamp use:
+  date -d @1515142282
+
+Combine the files
+  cat cosmic-array.log.[0-9]* > cosmic-array.log.combined
+
+* packagesi
 #+BEGIN_SRC 
 sudo apt install ipython3
 sudo apt install ipython3-notebook
