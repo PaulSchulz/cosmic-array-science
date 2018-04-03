@@ -23,7 +23,7 @@ To get time from unix timestamp use:
 Combine the files
   cat cosmic-array.log.[0-9]* > cosmic-array.log.combined
 
-* packagesi
+* packages
 #+BEGIN_SRC 
 sudo apt install ipython3
 sudo apt install ipython3-notebook
