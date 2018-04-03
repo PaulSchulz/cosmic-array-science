@@ -1,4 +1,40 @@
-* data sets
+* Introduction
+This repository contains the data and interactive Python (ipython)
+script used the process and graph the data, using the Jupyter Notebook
+tool.
+
+One the Jupyter Notebook has been installed, it can be run using:
+#+BEGIN_EXAMPLE
+  jupyter-notebook
+#+END_EXAMPLE
+
+This will start a local server, and open a browser connecting to this
+service, and display the contents of the local directory. Select the
+appropriate workbook to continue. 
+
+* Setup of the Jupyter Workbook
+** Software Intallation
+This software has been run on Ubuntu 17.10 
+
+Download and install the Jupyter Notebook and it's dependancies.
+
+*** (Old) Web documentation
+The following documenation is old, but may still be useful: 
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jupyter-notebook-to-run-ipython-on-ubuntu-16-04
+
+At one stage I needed to run the following:
+#+BEGIN_SRC 
+pip3 install --upgrade --force-reinstall --no-cache-dir jupyter
+#+END_SRC
+
+Instead of running 'jupiter workbook', use 'jupiter-workbook' instead. 
+ 
+* Python Software
+** Pandas
+ 
+See Tutorials: https://pandas.pydata.org/pandas-docs/stable/tutorials.html
+
+* Data sets
 | filename                  |             start | date                          |               end | date                          |
 |---------------------------+-------------------+-------------------------------+-------------------+-------------------------------|
 | cosmic-array.log.20180116 | 1515142282.402535 | Fri  5 Jan 19:21:22 ACDT 2018 | 1516084500.385583 | Tue 16 Jan 17:05:00 ACDT 2018 |
@@ -7,37 +43,26 @@
 |---------------------------+-------------------+-------------------------------+-------------------+-------------------------------|
 | cosmic-array.log.combined | 1515142282.402535 | Fri  5 Jan 19:21:22 ACDT 2018 | 1522673001.725486 | Mon  2 Apr 22:13:21 ACST 2018 |
 
-  CAHOST=10.147.20.58
+* Tools/Scripts
+The following are some examples on how to download data from a Cosmic
+Array sensor.
 
-Rotate data
-  DATESTAMP=`date +"%Y%m%d"`
-  ssh pi@$CAHOST mv git/cosmic-array/cosmic-array.log git/cosmic-array.log.$DATESTAMP
-  ssh pi@$CAHOST reboot
+#+BEGIN_EXAMPLE
+# IP Address of Cosmic Array sensor.
+CAHOST=10.147.20.58
 
-Get files:
-  scp pi@$CAHOST:git/cosmic-array/cosmic-array.log.* .
+# Rotate data
+DATESTAMP=`date +"%Y%m%d"`
+ssh pi@$CAHOST mv git/cosmic-array/cosmic-array.log git/cosmic-array.log.$DATESTAMP
+ssh pi@$CAHOST reboot
 
-To get time from unix timestamp use:
-  date -d @1515142282
+# Get files
+scp pi@$CAHOST:git/cosmic-array/cosmic-array.log.* .
 
-Combine the files
-  cat cosmic-array.log.[0-9]* > cosmic-array.log.combined
+# To get time from unix timestamp use:
+date -d @1515142282
 
-* packages
-#+BEGIN_SRC 
-sudo apt install ipython3
-sudo apt install ipython3-notebook
-sudo apt install python3-pandas
-#+END_SRC
+# Combine the files
+cat cosmic-array.log.[0-9]* > cosmic-array.log.combined
+#+END_EXAMPLE
 
-* ipython notebook
-** Installation
-#+BEGIN_SRC
-ipython3 notebook --pylab inline
-#+END_SRC
-
-** Running
-See: http://nbviewer.jupyter.org/github/jvns/pandas-cookbook/blob/v0.1/cookbook/A%20quick%20tour%20of%20IPython%20Notebook.ipynb
-
-* pandas
-See Tutorials: https://pandas.pydata.org/pandas-docs/stable/tutorials.html
