@@ -1,16 +1,16 @@
 * Introduction
 This repository contains the data and interactive Python (ipython)
-script used the process and graph the data, using the Jupyter Notebook
-tool.
+scripts used to process and graph the data, using the Jupyter
+Notebook.
 
 One the Jupyter Notebook has been installed, it can be run using:
 #+BEGIN_EXAMPLE
   jupyter-notebook
 #+END_EXAMPLE
 
-This will start a local server, and open a browser connecting to this
+This will start a local server, open a browser connecting to this
 service, and display the contents of the local directory. Select the
-appropriate workbook to continue. 
+appropriate workbook to continue.
 
 * Setup of the Jupyter Workbook
 ** Software Intallation
@@ -24,17 +24,20 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jupyter-noteboo
 
 At one stage I needed to run the following:
 #+BEGIN_SRC 
-pip3 install --upgrade --force-reinstall --no-cache-dir jupyter
+  pip3 install --upgrade --force-reinstall --no-cache-dir jupyter
 #+END_SRC
 
 Instead of running 'jupiter workbook', use 'jupiter-workbook' instead. 
  
 * Python Software
 ** Pandas
- 
+Pandas is a Python Library for Data Analysis.
+
 See Tutorials: https://pandas.pydata.org/pandas-docs/stable/tutorials.html
 
 * Data sets
+The following are datasets which have been collected.
+
 | filename                  |             start | date                          |               end | date                          |
 |---------------------------+-------------------+-------------------------------+-------------------+-------------------------------|
 | cosmic-array.log.20180116 | 1515142282.402535 | Fri  5 Jan 19:21:22 ACDT 2018 | 1516084500.385583 | Tue 16 Jan 17:05:00 ACDT 2018 |
@@ -66,3 +69,5 @@ date -d @1515142282
 cat cosmic-array.log.[0-9]* > cosmic-array.log.combined
 #+END_EXAMPLE
 
+* Postscript
+This file is formatted in the Emacs Org-Mode format.
