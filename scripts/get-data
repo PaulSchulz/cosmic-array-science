@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# IP Address of Cosmic Array sensor.
+#CAHOST=10.147.20.58
+CAHOST=cosmic-array-2-3
+
+# Rotate data
+DATESTAMP=`date +"%Y%m%d"`
+ssh pi@$CAHOST mv git/cosmic-array/cosmic-array.log git/cosmic-array.log.$DATESTAMP
+
+# Get files
+scp pi@$CAHOST:git/cosmic-array/cosmic-array.log* .
+
+ssh pi@$CAHOST sudo reboot
+

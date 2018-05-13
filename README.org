@@ -51,8 +51,18 @@ The following are some examples on how to download data from a Cosmic
 Array sensor.
 
 #+BEGIN_EXAMPLE
-# IP Address of Cosmic Array sensor.
-CAHOST=10.147.20.58
+# To get time from unix timestamp use:
+date -d @1515142282
+
+# Combine the files
+cat cosmic-array.log.[0-9]* > cosmic-array.log.combined
+#+END_EXAMPLE
+
+#+BEGIN_SRC sh
+#!/bin/bash
+
+#CAHOST=10.147.20.58
+CAHOST=cosmic-array-2-3
 
 # Rotate data
 DATESTAMP=`date +"%Y%m%d"`
@@ -60,14 +70,8 @@ ssh pi@$CAHOST mv git/cosmic-array/cosmic-array.log git/cosmic-array.log.$DATEST
 ssh pi@$CAHOST reboot
 
 # Get files
-scp pi@$CAHOST:git/cosmic-array/cosmic-array.log.* .
-
-# To get time from unix timestamp use:
-date -d @1515142282
-
-# Combine the files
-cat cosmic-array.log.[0-9]* > cosmic-array.log.combined
-#+END_EXAMPLE
+scp pi@$CAHOST:git/cosmic-array/cosmic-array.log* .
+#+END_SRC
 
 * Postscript
 This file is formatted in the Emacs Org-Mode format.
