@@ -1,0 +1,4 @@
+#!/bin/bash -x
+
+rm data/cosmic-array.log.combined
+cat data/cosmic-array.log.[0-9]* > data/cosmic-array.log.combined
