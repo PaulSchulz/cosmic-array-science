@@ -9,7 +9,7 @@ DATESTAMP=`date +"%Y%m%d"`
 ssh pi@$CAHOST mv git/cosmic-array/cosmic-array.log git/cosmic-array.log.$DATESTAMP
 
 # Get files
-scp pi@$CAHOST:git/cosmic-array/cosmic-array.log* .
+scp pi@$CAHOST:git/cosmic-array.log* .
 
 ssh pi@$CAHOST sudo reboot
 
