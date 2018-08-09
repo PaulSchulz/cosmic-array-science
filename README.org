@@ -1,7 +1,10 @@
 * Introduction
 This repository contains the data and interactive Python (ipython)
-scripts used to process and graph the data, using the Jupyter
-Notebook.
+scripts used to process data from a Cosmic Array detector.
+
+https://hackaday.io/project/16568-cosmic-array
+
+It is using the Jupyter Notebook.
 
 One the Jupyter Notebook has been installed, it can be run using:
 #+BEGIN_EXAMPLE
