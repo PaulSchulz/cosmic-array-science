@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# IP Address of Cosmic Array sensor.
+#CAHOST=10.147.20.58
+CAHOST=cosmic-array-2-3
+
+# Remove data data
+ssh pi@$CAHOST rm git/cosmic-array.log.*
