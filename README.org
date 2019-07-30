@@ -4,9 +4,11 @@ scripts used to process data from a Cosmic Array detector.
 
 https://hackaday.io/project/16568-cosmic-array
 
-It is using the Jupyter Notebook.
+It is using a Jupyter Notebook to process and graph the detector events.
 
-One the Jupyter Notebook has been installed, it can be run using:
+[[file:plot-muon-counts.png][file:plot-muon-counts.png]]
+
+Once the Jupyter Notebook has been installed, it can be run using:
 #+BEGIN_EXAMPLE
   jupyter-notebook
 #+END_EXAMPLE
