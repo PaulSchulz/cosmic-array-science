@@ -22,40 +22,10 @@ results and generate the graphs.
 
 * Setup of Jupyter Workbook
 ** Software Intallation
-This software has been run on Ubuntu 17.10 
+This software has been run on Ubuntu 19.04 (and previous versions from
+17.10)
 
 Download and install the Jupyter Notebook and it's dependancies.
-
-*** (Old) Web documentation
-The following documenation is old, but may still be useful: 
-https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jupyter-notebook-to-run-ipython-on-ubuntu-16-04
-
-At one stage I needed to run the following:
-#+BEGIN_SRC 
-  pip3 install --upgrade --force-reinstall --no-cache-dir jupyter
-#+END_SRC
-
-Instead of running 'jupiter workbook', use 'jupiter-workbook' instead. 
- 
-* Python Software
-** Pandas
-Pandas is a Python Library for Data Analysis.
-
-See Tutorials: https://pandas.pydata.org/pandas-docs/stable/tutorials.html
-
-e* Data sets
-The following are datasets which have been collected.
-
-| filename                  |             start | date                          |               end | date                          |
-|---------------------------+-------------------+-------------------------------+-------------------+-------------------------------|
-| cosmic-array.log.20180116 | 1515142282.402535 | Fri  5 Jan 19:21:22 ACDT 2018 | 1516084500.385583 | Tue 16 Jan 17:05:00 ACDT 2018 |
-| cosmic-array.log.20180217 | 1516084564.897229 | Tue 16 Jan 17:06:04 ACDT 2018 | 1518870464.984408 | Sat 17 Feb 22:57:44 ACDT 2018 |
-| cosmic-array.log.20180402 | 1518870757.834977 | Sat 17 Feb 23:02:37 ACDT 2018 | 1522673001.725486 | Mon  2 Apr 22:13:21 ACST 2018 |
-| cosmic-array.log.20180513 | 1522673110.834988 | Mon  2 Apr 22:15:10 ACST 2018 | 1526199915.198615 | Sun 13 May 17:55:15 ACST 2018 |
-| cosmic-array.log.20180603 | 1526199980.758925 | Sun 13 May 17:56:20 ACST 2018 | 1528024087.182758 | Sun  3 Jun 20:38:07 ACST 2018 |
-| cosmic-array.log.20180708 |                   |                               |                   |                               |
-|---------------------------+-------------------+-------------------------------+-------------------+-------------------------------|
-| cosmic-array.log.combined |                   |                               |                   |                               |
 
 * Tools/Scripts
 The following are some examples on how to download data from a Cosmic
@@ -85,4 +55,8 @@ cat cosmic-array.log.[0-9]* > cosmic-array.log.combined
 #+END_EXAMPLE
 
 * Postscript
-This file is formatted in the Emacs Org-Mode format.
+This file is formatted in the Emacs Org-Mode format. GitHub will
+process this file via the HTML exporter.
+
+See: https://orgmode.org/manual/HTML-export.html
+
