@@ -4,6 +4,18 @@ scripts used to process data from a Cosmic Array detector.
 
 https://hackaday.io/project/16568-cosmic-array
 
+** Quick Start
+#+BEGIN_SRC 
+./scripts/get-data
+# Check that data has been successfuly retrieved.
+cp cosmic-array.log* data/
+./scripts/merge-data
+./scripts/clean-data
+#+END_SRC
+
+** Details
+
+
 It is using a Jupyter Notebook to process and graph the detector events.
 
 [[file:plot-muon-counts.png][file:plot-muon-counts.png]]
